@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarmas - Joseline Cortes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Reloj y Alarmas</h1>
+
+        <div id="reloj" class="reloj">
+            <div id="hora">00:00:00</div>
+            <div id="fecha" class="fecha">Cargando...</div>
+        </div>
+
+        <div class="formulario">
+            <h2>Agregar nueva alarma</h2>
+            <div class="campos">
+                <label>Día:
+                    <select id="diaAlarma">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                        <option value="Domingo">Domingo</option>
+                    </select>
+                </label>
+                <label>Hora:
+                    <input type="time" id="horaAlarma">
+                </label>
+                <button class="btn-agregar" onclick="agregarAlarma()">Agregar</button>
+            </div>
+        </div>
+
+        <div class="lista-alarmas">
+            <h2>Mis alarmas</h2>
+            <ul id="listaAlarmas"></ul>
+            <p id="sinAlarmas" class="sin-alarmas">No hay alarmas registradas.</p>
+        </div>
+
+        <button id="btnDetener" class="btn-detener oculto" onclick="detenerSonido()">
+            Detener alarma
+        </button>
+    </div>
+
+    <audio id="audioAlarma" loop preload="auto">
+        <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+        <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

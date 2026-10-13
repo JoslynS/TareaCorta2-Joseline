@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fondo GIF */
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUybmd0d3k4dHE4ZTQ4NDBmNmlscjMxYWRnODkwYmV0YW81Ymhrc296NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ovWn8N8TVg8hi/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.fondo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        rgba(255, 182, 193, 0.55),
+        rgba(219, 112, 147, 0.65),
+        rgba(199, 21, 133, 0.55));
+    z-index: -1;
+}
+
+/* Header fijo */
+.header-fijo {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 60px);
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #4a1c40;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(74, 28, 64, 0.15);
+    z-index: 1000;
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header-fijo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4a1c40;
+}
+
+.datos-contacto {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6b2c5f;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Secciones */
+.seccion {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(74, 28, 64, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.seccion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(74, 28, 64, 0.25);
+}
+
+.seccion h2 {
+    color: #4a1c40;
+    border-bottom: 2px solid rgba(199, 21, 133, 0.5);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Sobre mí */
+.sobre-mi {
+    color: #4a1c40;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 0.98rem;
+}
+
+/* Estudios */
+.lista-estudios {
+    list-style: none;
+}
+
+.lista-estudios li {
+    padding: 12px 16px;
+    border-left: 4px solid rgba(199, 21, 133, 0.8);
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    font-size: 0.92rem;
+    color: #4a1c40;
+    transition: background 0.3s;
+}
+
+.lista-estudios li:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.lista-estudios strong {
+    color: #4a1c40;
+    font-weight: 700;
+}
+
+/* Lenguajes */
+.lenguajes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: linear-gradient(135deg,
+        rgba(199, 21, 133, 0.85),
+        rgba(219, 112, 147, 0.9));
+    color: white;
+    padding: 9px 20px;
+    border-radius: 25px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(199, 21, 133, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(199, 21, 133, 0.5);
+}
+
+/* Proyectos */
+.proyecto {
+    margin-bottom: 25px;
+}
+
+.proyecto:last-child {
+    margin-bottom: 0;
+}
+
+.proyecto h3 {
+    color: #4a1c40;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.proyecto pre {
+    background: rgba(30, 20, 40, 0.9);
+    color: #ffb6c1;
+    padding: 15px;
+    border-radius: 12px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 250px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.proyecto code {
+    font-family: inherit;
+    white-space: pre;
+}
+
+/* Botón ver proyecto */
+.btn-proyecto {
+    display: inline-block;
+    background: #c71585;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+.btn-proyecto:hover {
+    background: #a0106a;
+}
+
+/* Pestañas */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.4);
+    color: #4a1c40;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.tab-btn.activo {
+    background: #c71585;
+    color: white;
+    border-color: #c71585;
+    box-shadow: 0 4px 12px rgba(199, 21, 133, 0.4);
+}
+
+.tab-contenido {
+    display: none;
+}
+
+.tab-contenido.activo {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    body {
+        padding-top: 160px;
+    }
+    .header-fijo {
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 12px 15px;
+    }
+    .header-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-fijo h1 {
+        font-size: 1.05rem;
+    }
+    .datos-contacto {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.82rem;
+    }
+    .contenedor {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+    .seccion {
+        padding: 20px;
+        border-radius: 18px;
+    }
+}

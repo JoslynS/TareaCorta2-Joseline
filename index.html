@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Joseline Cortes Duran</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="fondo"></div>
+    <div class="fondo-overlay"></div>
+
+    <header class="header-fijo">
+        <div class="header-contenido">
+            <h1>Joseline Melissa Cortes Duran</h1>
+            <div class="datos-contacto">
+                <span>📞 7046-6215</span>
+                <span>✉️ joselinecortesd@gmail.com</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <div class="columna">
+
+            <!-- Pantalla 1: Sobre mi -->
+            <section class="seccion">
+                <h2>Sobre mí</h2>
+                <p class="sobre-mi">
+                    Hola, soy Joseline Melissa Cortes Duran, soy costarricense.
+                    Soy una persona con ganas de superación, proactiva, y en búsqueda
+                    de maneras de aportar a la sociedad con mis diversas habilidades
+                    y conocimientos.
+                </p>
+            </section>
+
+            <!-- Pantalla 2: Lenguajes de Programación -->
+            <section class="seccion">
+                <h2>Lenguajes que manejo</h2>
+                <div class="lenguajes">
+                    <span class="tag">PSeInt</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">SQL Server</span>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="columna">
+
+            <!-- Pantalla 3: Estudios que tengo -->
+            <section class="seccion">
+                <h2>Estudios</h2>
+                <ul class="lista-estudios">
+                    <li>
+                        <strong>Bachiller en Educación Media</strong>
+                    </li>
+                    <li>
+                        <strong>Certificado en CCNA: Introducción a las Redes</strong><br>
+                        Colegio Universitario de Cartago<br>
+                        Programa Cisco Networking Academy
+                    </li>
+                    <li>
+                        <strong>Tecnologías de la Información</strong><br>
+                        Universidad Colegio Universitario de Cartago (CUC)<br>
+                        Actualmente estudiando
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Pantalla 4: Mis proyectos -->
+            <section class="seccion">
+                <h2>Proyectos</h2>
+
+                <!-- Proyecto 1: Alarma -->
+                <div class="proyecto">
+                    <h3>⏰ Alarma Web</h3>
+                    <a href="alarmas/index.html" class="btn-proyecto">🔗 Ver Proyecto en Vivo</a>
+                    <div class="tabs">
+                        <button class="tab-btn activo" onclick="abrirTab(event, 'alarma-html')">HTML</button>
+                        <button class="tab-btn" onclick="abrirTab(event, 'alarma-css')">CSS</button>
+                        <button class="tab-btn" onclick="abrirTab(event, 'alarma-js')">JS</button>
+                    </div>
+                    <pre id="alarma-html" class="tab-contenido activo"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Alarmas&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="contenedor"&gt;
+        &lt;h1&gt;Reloj y Alarmas&lt;/h1&gt;
+        &lt;div id="reloj" class="reloj"&gt;
+            &lt;div id="hora"&gt;00:00:00&lt;/div&gt;
+            &lt;div id="fecha"&gt;Cargando...&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="formulario"&gt;
+            &lt;select id="diaAlarma"&gt;
+                &lt;option&gt;Lunes&lt;/option&gt;
+                &lt;option&gt;Martes&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;input type="time" id="horaAlarma"&gt;
+            &lt;button onclick="agregarAlarma()"&gt;Agregar&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;ul id="listaAlarmas"&gt;&lt;/ul&gt;
+        &lt;button id="btnDetener" onclick="detenerSonido()"&gt;Detener&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <pre id="alarma-css" class="tab-contenido"><code>body {
+    background-image: url('https://i.pinimg.com/originals/e5/29/83/e529836fb0bb5800f6d59396eab20b77.gif');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.contenedor {
+    background: rgba(15, 25, 50, 0.55);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+}</code></pre>
+                    <pre id="alarma-js" class="tab-contenido"><code>let alarmas = JSON.parse(localStorage.getItem('alarmas')) || [];
+let alarmaActiva = false;
+
+function actualizarReloj() {
+    const ahora = new Date();
+    document.getElementById('hora').textContent = ahora.toLocaleTimeString();
+}
+setInterval(actualizarReloj, 1000);</code></pre>
+                </div>
+
+                <!-- Proyecto 2: Corazón -->
+                <div class="proyecto">
+                    <h3>❤️ Corazón en Python</h3>
+                    <div class="tabs">
+                        <button class="tab-btn activo" onclick="abrirTab(event, 'corazon-py')">Python</button>
+                    </div>
+                    <pre id="corazon-py" class="tab-contenido activo"><code>import turtle as t
+import math as m
+import random as r
+import time
+
+s = t.Screen()
+s.setup(700, 700)
+s.bgcolor("black")
+s.title("Mi corazon por ti &lt;3")
+s.tracer(0)
+
+p = t.Turtle()
+p.hideturtle()
+
+def heart(a, scale):
+    x = 16 * (m.sin(a)**3) * scale
+    y = (13 * m.cos(a) - 5 * m.cos(2*a) - 2 * m.cos(3*a) - m.cos(4*a)) * scale
+    return x, y
+
+try:
+    for i in range(10000):
+        a = r.uniform(0, 2 * m.pi)
+        sc = r.uniform(0.5, 15.5)
+        x, y = heart(a, sc)
+        ang = m.atan2(y, x) + r.uniform(-0.5, 0.5)
+        length = r.uniform(4, 14)
+        p.pencolor(1.0, r.uniform(0.25, 0.53), r.uniform(0.63, 0.85))
+        p.width(r.uniform(0.3, 1.2))
+        p.penup()
+        p.goto(x + r.uniform(-2, 2), y + r.uniform(-2, 2))
+        p.pendown()
+        p.goto(x + length * m.cos(ang), y + length * m.sin(ang))
+        if i % 200 == 0:
+            s.update()
+            time.sleep(0.002)
+
+    for i in range(3500):
+        a = r.uniform(0, 2 * m.pi)
+        x, y = heart(a, 16.0)
+        ang = m.atan2(y, x) + r.uniform(-0.35, 0.35)
+        length = r.uniform(10, 32)
+        p.pencolor(1.0, r.uniform(0.45, 0.75), r.uniform(0.75, 0.95))
+        p.width(r.uniform(0.4, 0.9))
+        p.penup()
+        p.goto(x + r.uniform(-2, 2), y + r.uniform(-2, 2))
+        p.pendown()
+        p.goto(x + length * m.cos(ang), y + length * m.sin(ang))
+        if i % 150 == 0:
+            s.update()
+            time.sleep(0.002)
+
+    s.update()
+    t.done()
+
+except t.Terminator:
+    print("Ventana cerrada. ¡Adiós!")
+except Exception:
+    pass</code></pre>
+                </div>
+
+                <!-- Proyecto 3: Adivinar -->
+                <div class="proyecto">
+                    <h3>🎯 Adivinar un Número</h3>
+                    <div class="tabs">
+                        <button class="tab-btn activo" onclick="abrirTab(event, 'adivinar-py')">Python</button>
+                    </div>
+                    <pre id="adivinar-py" class="tab-contenido activo"><code>import random
+
+secreto = random.randint(1, 20)
+intentos = 0
+
+print("Adivina un número entre 1 y 20")
+
+while True:
+    intento = int(input("Tu intento: "))
+    intentos += 1
+
+    if intento &lt; secreto:
+        print("Muy bajo. ")
+    elif intento &gt; secreto:
+        print("Muy alto. ")
+    else:
+        print(f"Correcto, lo has logrado en {intentos} intentos, felicidades. ")
+        break</code></pre>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script>
+        function abrirTab(evento, idCaja) {
+            const proyecto = evento.target.closest('.proyecto');
+            const cajas = proyecto.querySelectorAll('.tab-contenido');
+            cajas.forEach(caja => caja.classList.remove('activo'));
+
+            const botones = proyecto.querySelectorAll('.tab-btn');
+            botones.forEach(boton => boton.classList.remove('activo'));
+
+            document.getElementById(idCaja).classList.add('activo');
+            evento.target.classList.add('activo');
+        }
+    </script>
+
+</body>
+</html>
